@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(10, 10, 10);
+    text-align: center;
+    color: #fff;
+    font-family:'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif !important;
+}
+header {
+    background: #000;
+    min-height: 70px;
+    line-height: 70px;
+    display: flex;
+    justify-content: space-around;
+}
+.shop-a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+}
+.shop-a:hover {
+    color: darkgray;
+}
+button {
+    outline: none;
+    border: 1px solid #fff;
+    background-color: rgb(0, 0, 0);
+    min-height: 35px;
+    width: 150px;
+    color: #fff;
+    font-size: larger !important;
+    margin: auto 0;
+}
+button:hover {
+    background: #fff;
+    color: #000;
+}
+main {
+    padding-top: 15px;
+}
+.goods-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 850px;
+    margin: 0 auto;
+}
+.goods-item {
+    width: 200px;
+    min-height: 200px;
+    margin: 0 auto 15px auto;
+    border: 2px dashed #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.goods-item>p, .goods-item>h3 {
+    margin: 0 0 10px 0;
+}
