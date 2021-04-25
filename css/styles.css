@@ -57,3 +57,58 @@ main {
 .goods-item>p, .goods-item>h3 {
     margin: 0 0 10px 0;
 }
+
+footer {
+    margin: 50px 0 0 0;
+    padding: 50px 0;
+    background-color: rgb(17, 16, 16);
+    width: 100%;
+}
+input{
+    width: 300px;
+    min-height: 25px;
+    margin: 7px;
+    box-sizing: border-box;
+}
+#submit {
+    width: 150px;
+    margin: auto;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    margin: 0 auto;
+}
+.form>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 0 0 33px 0;
+}
+
+.div {
+    display: none;
+    position: absolute;
+    color: red;
+    top: 40px;
+    left: 145px;
+    background: rgba(165, 155, 155, 0.356);
+}
+.div::after{
+    content: '';
+    width: 0; 
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid;
+    color: rgba(165, 155, 155, 0.356);
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+label.required:after
+{color: red;
+    content: " *";
+}
