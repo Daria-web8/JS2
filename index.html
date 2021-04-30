@@ -14,9 +14,17 @@
 <body>
     <div id="app">
         <header>
-            <input type="text" class="goods-search" />
-            <button class="search-button" type="button">Искать</button>
-            <button class="cart-button" type="button">Корзина</button>
+            <div class="search-block">
+                <input v-model="searchLine" type="text" class="goods-search" @keypress.enter="FilterGoods" />
+            <button v-on:click="FilterGoods" class="search-button" type="button">Искать</button>
+            </div>
+                <button @click="isVisibleCart" class="cart-button" type="button">Корзина</button>
+                <div class="cart" v-for="good in goods">
+                    <div class="cart-item">
+                        <h3>{{ good.product_name }}</h3>
+                        <p>{{ good.price }}</p>
+                    </div>
+                </div>
         </header>
         <main>
             <div class="goods-list">

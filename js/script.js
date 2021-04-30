@@ -4,6 +4,7 @@ const app = new Vue({
   el: '#app',
   data: () => ({
     goods: [],
+    placeholderString: 'Введите название заметки',
     filteredGoods: [],
     searchLine: ''
   }),
@@ -30,11 +31,25 @@ const app = new Vue({
 
       xhr.open('GET', url, true);
       xhr.send();
-    }
+    },
+    FilterGoods() {
+      let userValue = this.searchLine;
+
+    },
+    isVisibleCart() {
+      const f = document.querySelector('.cart')
+      f.style.display = 'block';
+    },
+    
   },
   watch: {
     filteredGoods() {
       console.log('this.filteredGoods :>> ', this.filteredGoods);
-    }
+    },
+    searchLine(value) {
+      if(value.length > 30) {
+          this.searchLine = ''
+      }
+  }
   }
 })
