@@ -9,9 +9,9 @@ body {
 header {
     background: #000;
     min-height: 70px;
-    line-height: 70px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 .shop-a {
     text-decoration: none;
@@ -29,11 +29,15 @@ button {
     width: 150px;
     color: #fff;
     font-size: larger !important;
-    margin: auto 0;
 }
 button:hover {
     background: #fff;
     color: #000;
+}
+
+header>input {
+    height: 30px;
+
 }
 main {
     padding-top: 15px;
