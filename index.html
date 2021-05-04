@@ -10,28 +10,20 @@
       src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"
     ></script>
     <script defer src="js/script.js"></script>
+    <script defer src="js/components.js"></script>
     <title>eShop</title>
   </head>
 
   <body>
     <div id="app">
       <header>
-        <input v-model="searchLine" type="text" class="goods-search" />
-        <button class="search-button" type="button" @click="filterGoods">
-          Искать
-        </button>
-        <button class="cart-button" type="button" @click="handleCart">Корзина</button>
+        <goods-search
+          v-model="searchLine"
+          @filter-goods="filterGoods"
+        ></goods-search>
+        <cart></cart>
       </header>
-      <main>
-        <div v-show="isVisibleCart" class="cart">Корзина</div>
-        <div v-if="goods.length !==0" class="goods-list">
-          <div class="goods-item" v-for="good in goods">
-            <h3>{{ good.product_name }}</h3>
-            <p>{{ good.price }}</p>
-          </div>
-        </div>
-        <h3 v-else>No data</h3>
-      </main>
+      <goods-list :goods="filteredGoods"></goods-list>
     </div>
   </body>
 </html>
