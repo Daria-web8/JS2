@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"
+    ></script>
+    <script defer src="js/script.js"></script>
+    <script defer src="js/components.js"></script>
+    <title>eShop</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <header>
+        <goods-search
+          v-model="searchLine"
+          @filter-goods="filterGoods"
+        ></goods-search>
+        <cart :delete-from-cart="deleteGoodFromCart" :goods="cartGoods"></cart>
+      </header>
+      <goods-list
+        :add-to-cart="addGoodToCart"
+        :goods="filteredGoods"
+      ></goods-list>
+    </div>
+  </body>
+</html>
